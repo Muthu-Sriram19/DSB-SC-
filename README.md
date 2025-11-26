@@ -48,11 +48,37 @@ Model Waveform
 <img width="703" height="679" alt="image" src="https://github.com/user-attachments/assets/e7c7c7f8-ccf2-41ac-b1f3-325989941a6f" />
 
 Program
+```
+Ac=10.3; 
+fc=2030; 
+Am=4.3; 
+fm=330; 
+fs=50000; 
+t=0:1/fs:2/fm; 
+Wm=2*3.14*fm; 
+Wc=2*3.14*fc; 
+Em=Am*sin(2*3.14*fm*t); 
+subplot(3,1,1); 
+plot(t,Em); 
+title("message signal")
+Ec=Ac*sin(2*3.14*fc*t); 
+subplot(3,1,2); 
+plot(t,Ec);
+title("carrier signal") 
+Edsbsc=((Am/2)*cos((Wc-Wm)*t))-((Am/2)*cos((Wc+Wm)*t)); 
+subplot(3,1,3); 
+plot(t,Edsbsc);
+title("dsb-sc modulated signal")
+```
 
 Output Graph
+<img width="692" height="560" alt="image" src="https://github.com/user-attachments/assets/ae19da02-16c3-4f56-b29f-d4c2aefac641" />
+
 
 
 Tablular Column
+![WhatsApp Image 2025-11-26 at 19 16 51_5f54dded](https://github.com/user-attachments/assets/9f0cd757-c35e-46cf-b651-b84900937a0b)
+![WhatsApp Image 2025-11-26 at 19 17 10_e1e6a9ba](https://github.com/user-attachments/assets/1c13fd66-973a-4976-b2a1-59784545d8a9)
 
 
 Result
